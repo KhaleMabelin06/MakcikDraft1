@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makcik - Authentic Malaysian Cuisine</title>
+    <!-- Google Fonts for Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Makcik-styles.css">
+</head>
+<body>
+    
+    <!-- Header with Logo -->
+    <header>
+        <div class="logo-container">
+            <img src="https://scontent.fmnl17-8.fna.fbcdn.net/v/t39.30808-6/353608770_669810128491273_921447420429012639_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHaOHSUazWzsU8vbPn91LNKycwFXV7EkP7JzAVdXsSQ_qQm3gKmE4OlxEdW2qzpfN3WTrW6YgQm9GHBv00cfgyW&_nc_ohc=IdXH1D7y-UIQ7kNvwF0knCu&_nc_oc=Adldt8jWD-mbbgQ8BlyAfQSaSAfU0OSDdIPSEtql5h4QxWObZECM_Nkx_m8lTOJtQ7w&_nc_zt=23&_nc_ht=scontent.fmnl17-8.fna&_nc_gid=ajJNkMFSKte6bkXZNUMoiQ&oh=00_AfjIFWj-9-6sZf56A7gb8whgICnKhOQfyxKQlRTQDndU0w&oe=69338C19" alt="Makcik Logo" class="logo">
+        </div>
+        <p class="tagline">Authentic Malaysian Cuisine with Homemade Sambal</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><button class="nav-btn active" data-tab="home">Home</button></li>
+            <li><button class="nav-btn" data-tab="menu">Menu</button></li>
+            <li><button class="nav-btn" data-tab="order">Order</button></li>
+            <li><button class="nav-btn" data-tab="about">About</button></li>
+            <li><button class="nav-btn" data-tab="contact">Contact</button></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h3>Indulge in the Taste of Malaysia</h3>
+                    <p>Experience our favorite dishes served with Makcik's signature homemade sautéed sambal sauce.</p>
+                    <a href="#" class="cta-button" onclick="switchTab('order'); return false;">Order Now</a>
+                </div>
+            </div>
+
+            <h2 class="section-title">Why Choose Makcik?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🌶️</span>
+                    <h4>Homemade Sambal</h4>
+                    <p>Our signature sautéed sambal sauce made fresh with authentic Malaysian spices.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🇲🇾</span>
+                    <h4>Authentic Taste</h4>
+                    <p>Traditional recipes bringing you the true spirit of Malaysia.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🛵</span>
+                    <h4>Delivery & Pickup</h4>
+                    <p>Convenient food delivery service or pickup - your choice!</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">⭐</span>
+                    <h4>Highly Rated</h4>
+                    <p>Loved by our customers with excellent reviews and ratings.</p>
+                </div>
+            </div>
+
+            <article class="highlight-article">
+                <h3>Our Specialty</h3>
+                <p>Makcik brings you the authentic taste of Malaysian cuisine right to your doorstep in Quezon City! Our dishes are carefully prepared with traditional recipes and served with our famous homemade sambal sauce that adds the perfect kick to every meal.</p>
+            </article>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu">
+            <h2 class="section-title">Our Menu</h2>
+            <p class="subtitle">Authentic Malaysian dishes with homemade sambal sauce</p>
+
+            <article class="menu-category">
+                <h3>Rice Dishes (Nasi)</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-img-wrapper">
+                            <!-- Placeholder image src provided. Replace with your actual image links. -->
+                            <img src="https://scontent.fmnl17-2.fna.fbcdn.net/v/t39.30808-6/556339388_1266496408822639_7179944767585974337_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHZZ6O9yXqkbEgTi9eYmGumiTGGk-02RhWJMYaT7TZGFdS_9bM0JcpiCwOQd8IhKcqLARYWa45el6-31vFMAAhk&_nc_ohc=79u9LwZz_okQ7kNvwGOmOjA&_nc_oc=AdkbIArKtQVAXyVaYbfCxWRTRL_1modaaNT262r1HL08mFzhXijrq_AGK6qjY0Jk4IQ&_nc_zt=23&_nc_ht=scontent.fmnl17-2.fna&_nc_gid=n84yZOrZoTFt8e9IbInkCw&oh=00_AfhqTOCLVezPOJou9NpkcS0wlAFh_2DWzJMvjKc6O_B5bQ&oe=6933A84F" alt="Nasi Lemak Ayam" class="menu-img">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Nasi Lemak Ayam</h4>
+                            <p>Fragrant coconut rice with fried chicken</p>
+                            <span class="price">₱150</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-img-wrapper">
+                            <img src="https://scontent.fmnl17-6.fna.fbcdn.net/v/t39.30808-6/577014968_1298704835601796_4239202637735118153_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEgemMew5WJncKvhBCjnS_7xopjrh1_YX3GimOuHX9hfYqJ9fABzwrk4iL5dR_cKuJObKldIO-CBO1LoyQq9ssM&_nc_ohc=l2la5R67CVYQ7kNvwHyobGR&_nc_oc=AdlOJ6xy3nf91mNHXHuVYw3O4I7DdHTkUMkoHceRCFNASmSgqFBJqMX9Dy8fA95NOHg&_nc_zt=23&_nc_ht=scontent.fmnl17-6.fna&_nc_gid=4poe0_2R4W3-t4zyk4JbvA&oh=00_Afim0exOKQjhNxQ3MU4hzO1z2OA_Ytgb93294voA9-FaqA&oe=6933A232" alt="Nasi Lemak Beef Rendang" class="menu-img">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Nasi Lemak Beef Rendang</h4>
+                            <p>Coconut rice with slow-cooked beef in spices</p>
+                            <span class="price">₱180</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-img-wrapper">
+                            <img src="https://scontent.fmnl17-3.fna.fbcdn.net/v/t39.30808-6/561230131_1273366538135626_6032006677419445160_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHnnsdR41oBbihDJNxS97PwWbyzggYytMNZvLOCBjK0wyX7Qg-o9uBfz9AGxu-txAtnSjONsd1WQBzQDmBOnng8&_nc_ohc=O_veyVMSXDkQ7kNvwFybQpd&_nc_oc=AdmTJ5AQ9VM1gvxyGemwi7Wy3jb5X8MsKpsEQIJdrOz9FfiY8-fW2sqlgUQbAI4eNUk&_nc_zt=23&_nc_ht=scontent.fmnl17-3.fna&_nc_gid=ZamtwjM_0BrOzNfZMqjybA&oh=00_AfhkLHmdhDTWzG1f2l3-tFPBvoHCG4A60yaIjZpFmtqqug&oe=69338DB1" alt="Nasi Lemak Ikan" class="menu-img">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Nasi Lemak Ikan</h4>
+                            <p>Coconut rice with crispy fried fish</p>
+                            <span class="price">₱160</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="menu-category">
+                <h3>Main Dishes (Lauk)</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-img-wrapper">
+                            <img src="https://placehold.co/600x400/1E4B3A/ffffff?text=Beef+Rendang" alt="Beef Rendang" class="menu-img">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Beef Rendang</h4>
+                            <p>Tender beef in rich coconut curry</p>
+                            <span class="price">₱200</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-img-wrapper">
+                            <img src="https://placehold.co/600x400/1E4B3A/ffffff?text=Ayam+Masak+Merah" alt="Ayam Masak Merah" class="menu-img">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Ayam Masak Merah</h4>
+                            <p>Chicken in sweet and spicy tomato sauce</p>
+                            <span class="price">₱170</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-img-wrapper">
+                            <img src="https://placehold.co/600x400/1E4B3A/ffffff?text=Ikan+Bakar" alt="Ikan Bakar" class="menu-img">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Ikan Bakar</h4>
+                            <p>Grilled fish with sambal sauce</p>
+                            <span class="price">₱180</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-img-wrapper">
+                            <img src="https://placehold.co/600x400/1E4B3A/ffffff?text=Sambal+Telur" alt="Sambal Telur" class="menu-img">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Sambal Telur</h4>
+                            <p>Hard-boiled eggs in spicy sambal</p>
+                            <span class="price">₱120</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="menu-category">
+                <h3>Noodles (Mee)</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-img-wrapper">
+                            <img src="https://placehold.co/600x400/D9B34C/ffffff?text=Mee+Goreng" alt="Mee Goreng" class="menu-img">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Mee Goreng</h4>
+                            <p>Stir-fried yellow noodles with vegetables</p>
+                            <span class="price">₱140</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-img-wrapper">
+                            <img src="https://placehold.co/600x400/D9B34C/ffffff?text=Char+Kway+Teow" alt="Char Kway Teow" class="menu-img">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Char Kway Teow</h4>
+                            <p>Flat rice noodles with prawns and egg</p>
+                            <span class="price">₱160</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-img-wrapper">
+                            <img src="https://placehold.co/600x400/D9B34C/ffffff?text=Laksa" alt="Laksa" class="menu-img">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Laksa</h4>
+                            <p>Spicy coconut curry noodle soup</p>
+                            <span class="price">₱180</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="menu-category">
+                <h3>Drinks & Sides</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-img-wrapper">
+                            <img src="https://placehold.co/600x400/B43729/ffffff?text=Teh+Tarik" alt="Teh Tarik" class="menu-img">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Teh Tarik</h4>
+                            <p>Malaysian pulled milk tea</p>
+                            <span class="price">₱60</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-img-wrapper">
+                            <img src="https://placehold.co/600x400/B43729/ffffff?text=Kopi" alt="Kopi" class="menu-img">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Kopi</h4>
+                            <p>Traditional Malaysian coffee</p>
+                            <span class="price">₱50</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-img-wrapper">
+                            <img src="https://placehold.co/600x400/B43729/ffffff?text=Extra+Sambal" alt="Extra Sambal" class="menu-img">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Extra Sambal</h4>
+                            <p>Homemade sautéed sambal sauce</p>
+                            <span class="price">₱30</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Order Section -->
+        <section id="order">
+            <h2 class="section-title">Order Now</h2>
+            <div id="orderContent" class="order-section">
+                <div class="locked-message">
+                    <h3>🔒 Please Register First</h3>
+                    <p>Create an account to start ordering authentic Malaysian cuisine!</p>
+                    <button class="cta-button" style="margin-top: 1.5rem;" onclick="showRegisterForm()">Register Now</button>
+                </div>
+            </div>
+
+            <div id="registerSection" style="display: none;">
+                <h2 class="section-title">Create Account</h2>
+                <div class="auth-container">
+                    <div class="form-card">
+                        <div id="registerSuccess" class="message success">
+                            <h3>✓ Successfully Registered!</h3>
+                            <p>Welcome to Makcik! Redirecting...</p>
+                        </div>
+                        
+                        <form id="registerForm">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" placeholder="Juan" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" placeholder="Dela Cruz" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="text" id="email" placeholder="juan@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="text" id="phone" placeholder="09123456789" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Delivery Address</label>
+                                <textarea id="address" rows="3" placeholder="123 Main Street, Quezon City" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">Register & Start Ordering</button>
+                        </form>
+                        <div id="registerError" class="message error">
+                            Please check your inputs and try again.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="orderFormSection" style="display: none;">
+                <div class="grid">
+                    <div class="order-column">
+                        <article class="info-card">
+                            <h3>👤 Your Information</h3>
+                            <div class="info-grid">
+                                <p><strong>Name:</strong> <span id="displayName"></span></p>
+                                <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+                                <p><strong>Phone:</strong> <span id="displayPhone"></span></p>
+                            </div>
+                            <p class="address-display"><strong>Delivery To:</strong> <span id="displayAddress"></span></p>
+                        </article>
+
+                        <article class="form-card">
+                            <h3>🛒 Build Your Order</h3>
+                            <div id="orderSuccess" class="message success">
+                                <h3>Order Placed Successfully!</h3>
+                                <p>We'll contact you shortly.</p>
+                            </div>
+                            
+                            <form id="orderForm">
+                                <div class="form-group">
+                                    <label for="orderItem">Select Dish</label>
+                                    <select id="orderItem" required>
+                                        <option value="">Choose your dish...</option>
+                                        <optgroup label="🍛 Rice Dishes">
+                                            <option value="Nasi Lemak Ayam" data-price="150">Nasi Lemak Ayam - ₱150</option>
+                                            <option value="Nasi Lemak Beef Rendang" data-price="180">Nasi Lemak Beef Rendang - ₱180</option>
+                                            <option value="Nasi Lemak Ikan" data-price="160">Nasi Lemak Ikan - ₱160</option>
+                                        </optgroup>
+                                        <optgroup label="🥘 Main Dishes">
+                                            <option value="Beef Rendang" data-price="200">Beef Rendang - ₱200</option>
+                                            <option value="Ayam Masak Merah" data-price="170">Ayam Masak Merah - ₱170</option>
+                                            <option value="Ikan Bakar" data-price="180">Ikan Bakar - ₱180</option>
+                                            <option value="Sambal Telur" data-price="120">Sambal Telur - ₱120</option>
+                                        </optgroup>
+                                        <optgroup label="🍜 Noodles">
+                                            <option value="Mee Goreng" data-price="140">Mee Goreng - ₱140</option>
+                                            <option value="Char Kway Teow" data-price="160">Char Kway Teow - ₱160</option>
+                                            <option value="Laksa" data-price="180">Laksa - ₱180</option>
+                                        </optgroup>
+                                        <optgroup label="🥤 Drinks & Sides">
+                                            <option value="Teh Tarik" data-price="60">Teh Tarik - ₱60</option>
+                                            <option value="Kopi" data-price="50">Kopi - ₱50</option>
+                                            <option value="Extra Sambal" data-price="30">Extra Sambal - ₱30</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="quantity">Quantity</label>
+                                    <input type="number" id="quantity" min="1" value="1" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="notes">Special Instructions</label>
+                                    <textarea id="notes" rows="2" placeholder="e.g., Extra spicy..."></textarea>
+                                </div>
+                                
+                                <div class="total-box">
+                                    <strong>Total Item Price:</strong>
+                                    <span id="totalPrice">₱0</span>
+                                </div>
+                                
+                                <button type="submit" class="submit-btn">Add to Order</button>
+                            </form>
+                        </article>
+                    </div>
+
+                    <div class="cart-column">
+                        <article class="cart-card">
+                            <h3>📋 Your Cart</h3>
+                            <div id="cartItems" class="cart-items-container">
+                                <div class="empty-cart">
+                                    <p class="cart-icon">🛒</p>
+                                    <p>Your cart is empty</p>
+                                </div>
+                            </div>
+                            <div id="cartSummary" class="cart-summary">
+                                <div class="summary-row">
+                                    <span>Subtotal:</span>
+                                    <span id="cartSubtotal">₱0</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Delivery Fee:</span>
+                                    <span>₱50</span>
+                                </div>
+                                <div class="summary-total">
+                                    <strong>Grand Total:</strong>
+                                    <strong id="cartGrandTotal">₱50</strong>
+                                </div>
+                                <p class="delivery-note">Delivery or Pickup available</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2 class="section-title">About Makcik</h2>
+            <div class="grid">
+                <article>
+                    <h3>Our Story</h3>
+                    <p>Makcik is your trusted source for authentic Malaysian cuisine in Quezon City. We're passionate about bringing you the traditional flavors of Malaysia, prepared with love and authentic recipes that have been passed down through generations.</p>
+                    <p>What sets us apart is our commitment to authenticity - from our signature homemade sautéed sambal sauce to every dish we prepare. Each meal is a celebration of Malaysian culinary heritage.</p>
+                </article>
+
+                <article class="special-article">
+                    <h3>🌟 What Makes Us Special</h3>
+                    <ul class="special-list">
+                        <li>
+                            <strong>Homemade Sambal</strong>
+                            <p>Fresh daily with authentic spices.</p>
+                        </li>
+                        <li>
+                            <strong>Authentic Recipes</strong>
+                            <p>Genuine flavors from Malaysia.</p>
+                        </li>
+                        <li>
+                            <strong>Quality Ingredients</strong>
+                            <p>Freshest ingredients guaranteed.</p>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="subtitle">We'd love to hear from you!</p>
+
+            <div class="grid contact-grid">
+                <article class="contact-card">
+                    <h3>📞 Get In Touch</h3>
+                    <div class="contact-details">
+                        <p><strong>Phone:</strong> 0927 432 4665</p>
+                        <p><strong>Facebook:</strong> facebook.com/Makcik.ph</p>
+                        <p><strong>Location:</strong> Quezon City, Philippines</p>
+                    </div>
+                </article>
+
+                <article class="contact-card">
+                    <h3>⭐ Customer Reviews</h3>
+                    <div class="rating-box">
+                        <span class="score">100%</span>
+                        <div class="stars">★★★★★</div>
+                        <span class="label">Recommended</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Makcik - Authentic Malaysian Cuisine | Quezon City, Philippines</p>
+    </footer>
+
+    <script src="Makcik-script.js"></script>
+</body>
+</html>

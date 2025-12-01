@@ -1,0 +1,507 @@
+/* Makcik Malaysian-Themed Color Palette
+   Primary:
+   - Teh Tarik Brown (#C48A54)
+   - Heritage Forest Green (#1E4B3A)
+   
+   Secondary:
+   - Batik Gold (#D9B34C)
+   - Chili Sambal Red (#B43729)
+   
+   Neutrals:
+   - Kuala Lumpur Fog (#F7F4EF)
+   - Charcoal Kopitiam Grey (#3C3C3C)
+*/
+
+:root {
+    --primary-green: #1E4B3A;
+    --primary-brown: #C48A54;
+    --accent-gold: #D9B34C;
+    --accent-red: #B43729;
+    --bg-fog: #F7F4EF;
+    --text-grey: #3C3C3C;
+    --white: #ffffff;
+    --shadow-soft: 0 10px 30px rgba(30, 75, 58, 0.08);
+    --shadow-hover: 0 15px 40px rgba(30, 75, 58, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    color: var(--text-grey);
+    background-color: var(--bg-fog);
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-green);
+}
+
+/* Header */
+header {
+    background-color: var(--primary-green);
+    color: var(--white);
+    padding: 2rem 1rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 5px solid var(--accent-gold);
+}
+
+.logo-container {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1rem;
+    background: var(--white);
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--accent-gold);
+    letter-spacing: 0.5px;
+}
+
+/* Navigation */
+nav {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav button {
+    background: none;
+    border: none;
+    padding: 1.2rem 2rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-grey);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav button:hover {
+    color: var(--accent-red);
+    background-color: rgba(217, 179, 76, 0.1); /* Gold with opacity */
+}
+
+nav button.active {
+    color: var(--primary-green);
+    border-bottom-color: var(--accent-gold);
+}
+
+/* Main Layout */
+main {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+}
+
+section {
+    display: none;
+    animation: fadeIn 0.6s ease-out;
+}
+
+section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--primary-green);
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-red);
+    margin: 0.5rem auto;
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--primary-brown);
+    font-size: 1.2rem;
+    margin-top: -1.5rem;
+    margin-bottom: 3rem;
+    font-style: italic;
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--primary-brown);
+    background-image: linear-gradient(rgba(30, 75, 58, 0.8), rgba(30, 75, 58, 0.8));
+    border-radius: 20px;
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow-soft);
+}
+
+.hero h3 {
+    color: var(--accent-gold);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-red);
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #962d22;
+    transform: translateY(-3px);
+}
+
+/* Cards & Articles */
+article {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(196, 138, 84, 0.2); /* faint brown border */
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.feature-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease;
+    border-top: 4px solid var(--accent-gold);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* Menu Layout */
+.menu-category h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-brown);
+    border-bottom: 2px solid var(--bg-fog);
+    padding-bottom: 0.5rem;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.menu-item {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.menu-img-wrapper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background-color: var(--bg-fog);
+}
+
+.menu-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.menu-item:hover .menu-img {
+    transform: scale(1.05);
+}
+
+.menu-item-content {
+    padding: 1.5rem;
+}
+
+.menu-item h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-green);
+}
+
+.menu-item p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1rem;
+    min-height: 3rem; /* Align prices */
+}
+
+.price {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--accent-red);
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+}
+
+/* Order Forms */
+.auth-container, .order-column, .cart-column {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-green);
+    font-weight: 700;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-brown);
+    box-shadow: 0 0 0 2px rgba(196, 138, 84, 0.2);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-green);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #143328;
+}
+
+/* Cart & Info Display */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media(min-width: 768px) {
+    .grid {
+        grid-template-columns: 2fr 1fr;
+    }
+    
+    #about .grid, #contact .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.cart-card {
+    background-color: var(--primary-green);
+    color: white;
+}
+
+.cart-card h3 {
+    color: var(--accent-gold);
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 2rem 0;
+    opacity: 0.8;
+}
+
+.cart-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.cart-summary {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    margin-top: 1rem;
+    padding-top: 1rem;
+    display: none; /* JS toggles this */
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    color: var(--accent-gold);
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.delivery-note {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 1rem;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+/* Contact Section */
+.contact-card {
+    text-align: center;
+}
+
+.contact-details p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.rating-box {
+    background-color: var(--bg-fog);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 2px solid var(--accent-gold);
+    display: inline-block;
+}
+
+.score {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-green);
+}
+
+.stars {
+    color: var(--accent-gold);
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-green);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    border-top: 5px solid var(--primary-brown);
+}
+
+/* Form Validation Styles */
+input.accepted { border-color: #28a745; background-color: #f8fff9; }
+input.rejected { border-color: var(--accent-red); background-color: #fff8f8; }
+
+.message {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    display: none;
+    text-align: center;
+}
+.message.success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+.message.error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+
+/* Locked content */
+.locked-message {
+    text-align: center;
+    padding: 3rem;
+    background: var(--white);
+    border: 2px dashed var(--primary-brown);
+    border-radius: 12px;
+}
