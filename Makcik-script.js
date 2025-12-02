@@ -218,45 +218,187 @@ function finalizeOrder() {
 function confirmOrder() {
     const orderTypeValue = orderType.value === 'pickup' ? 'Pickup' : 'Delivery';
     const deliveryFee = orderType.value === 'pickup' ? 0 : 50;
-    
-    let orderDetails = `
-=== ORDER CONFIRMATION ===
-
-Customer: ${customerData.firstName} ${customerData.lastName}
-Email: ${customerData.email}
-Phone: ${customerData.phone}
-Address: ${customerData.address}
-Order Type: ${orderTypeValue}
-
-ITEMS ORDERED:
-`;
-    
     let subtotal = 0;
-    cart.forEach((item, index) => {
+    
+    // 1. Calculate totals and build item list HTML
+    let itemsHtml = '';
+    cart.forEach((item) => {
         const itemTotal = item.price * item.quantity;
         subtotal += itemTotal;
-        orderDetails += `${index + 1}. ${item.name} - Qty: ${item.quantity} - ₱${itemTotal}\n`;
-        if (item.notes) {
-            orderDetails += `   Note: ${item.notes}\n`;
-        }
+        
+        itemsHtml += `
+            <li class="receipt-item-row">
+                <span><strong>${item.quantity}x</strong> ${item.name}</span>
+                <span>₱${itemTotal}</span>
+            </li>
+            ${item.notes ? `<div style="font-size:0.8rem; color:#888; margin-top:-5px; margin-bottom:8px; padding-left:10px;">Note: ${item.notes}</div>` : ''}
+        `;
     });
-    
-    orderDetails += `
-Subtotal: ₱${subtotal}
-Delivery Fee: ₱${deliveryFee}
-GRAND TOTAL: ₱${subtotal + deliveryFee}
 
-Order sent to restaurant for processing!
-`;
+    const grandTotal = subtotal + deliveryFee;
+
+    // 2. Build the full Receipt HTML
+    const receiptHTML = `
+        <div class="receipt-header">
+            <span class="close-modal-x" onclick="closeSuccessModal()">&times;</span>
+            
+            <span class="icon">✓</span>
+            <h2 style="margin:0;">Order Confirmed!</h2>
+            <p style="margin:0; opacity: 0.7;">Sent to restaurant for processing</p>
+        </div>
+        
+        <div class="receipt-body">
+            <div class="receipt-details">
+                <p><strong>Customer:</strong> ${customerData.firstName} ${customerData.lastName}</p>
+                <p><strong>Phone:</strong> ${customerData.phone}</p>
+                <p><strong>Type:</strong> ${orderTypeValue}</p>
+                <p><strong>Address:</strong> ${customerData.address}</p>
+            </div>
+
+            <ul class="receipt-items-list">
+                ${itemsHtml}
+            </ul>
+
+            <div class="receipt-totals">
+                <div class="row"><span>Subtotal:</span> <span>₱${subtotal}</span></div>
+                <div class="row"><span>Delivery Fee:</span> <span>₱${deliveryFee}</span></div>
+                <div class="row grand-total"><span>TOTAL:</span> <span>₱${grandTotal}</span></div>
+            </div>
+
+            <button onclick="closeSuccessModal()" class="submit-btn" style="margin-top:1.5rem; width:100%;">OK, Back to Home</button>
+        </div>
+    `;
+
+    // 3. Inject into the new modal and show it
+    document.getElementById('receiptContainer').innerHTML = receiptHTML;
     
-    alert(orderDetails);
+    // Hide the "Are you sure?" modal
+    document.getElementById('confirmModal').style.display = 'none';
     
+    // Show the "Success" modal with animation
+    const successModal = document.getElementById('successModal');
+    successModal.style.display = 'flex';
+    successModal.querySelector('.modal-content').classList.add('animate__animated', 'animate__fadeInUp');
+
+    // 4. Reset Data
     cart = [];
     updateCart();
-    
-    closeModal();
+}
+
+function closeSuccessModal() {
+    document.getElementById('successModal').style.display = 'none';
+    // Optional: Switch back to home tab after successful order
+    switchTab('home'); 
 }
 
 function closeModal() {
     document.getElementById('confirmModal').style.display = 'none';
 }
+
+// Close modal when clicking outside the box
+window.onclick = function(event) {
+    const modal = document.getElementById('successModal');
+    // If the user clicks on the dark background (modal overlay), close it
+    if (event.target == modal) {
+        closeSuccessModal();
+    }
+}
+
+// customer reviews part/component
+
+const reviews = [
+    {
+        author: "Mukz Hadain",
+        text: "ang sarap, worth it ang craving, para ako napunta ulit sa malaysia. thank you craving satisfied. ♥️♥️🇲🇾"
+    },
+    {
+        author: "Angelo Viloria",
+        text: "Absolutely phenomenal Malaysian cuisine! Rich flavors, perfect spices, stunning presentation. A must-try! 5/5 ⭐"
+    },
+    {
+        author: "Yehn Ollodo Jumalon",
+        text: "Very authentic! thanks po! Great food."
+    },
+    {
+        author: "Emelyn Haz Balabat",
+        text: "Super naenjoy po namin at masarap lahat. Kunting sambal lang kasi super anghang hehe. Will definitely order again!"
+    },
+    {
+        author: "Sara Yeo",
+        text: "Authentic taste! Ordered 8 variants for a picnic. Packed well, superb flavors. Highly recommended! 🥰"
+    },
+    {
+        author: "Nadine Gamalinda",
+        text: "Lived 3 years in Malaysia. Didn’t expect Makcik to taste this authentic. Ordering again this week!"
+    },
+    {
+        author: "Mpn Joeshred",
+        text: "Ordered Nasi Lemak Ayam via FoodPanda. Delicious and addicting! Sana bigger chicken option."
+    },
+    {
+        author: "Cindy PC",
+        text: "I'm Malaysian. This is 95% closest to home I’ve tasted in PH. Get extra sambal!"
+    },
+    {
+        author: "Geraldine Maglalang Cabello",
+        text: "Great makan experience! Authentic taste and superb sambal! Sedap!! 💖"
+    },
+    {
+        author: "Rosella Perez Antiforda-Brisenio",
+        text: "Authentic Malaysian food, good presentation, affordable and fast delivery."
+    },
+    {
+        author: "Beth Periquet",
+        text: "If you like Nasi Lemak, THIS IS IT! Will definitely order again."
+    },
+    {
+        author: "Antonio Ram Fernandez Roldan",
+        text: "Feels like Brunei! Authentic Nasi Lemak, amazing sambal! Sobrang sarap!"
+    },
+    {
+        author: "Sheryline Di",
+        text: "Sobrang sarap ng Nasi Lemak at Sambal! Ubos agad. Will order ulit for my family 😊"
+    },
+    {
+        author: "Roger Eliseo Ocana",
+        text: "Very organic Makcik Asian food! Nilapang namin!"
+    },
+    {
+        author: "Yormelody Fortes Ocana",
+        text: "Ayos sambal! Sakto tamis-anghang. Pre-order niyo na!"
+    },
+    {
+        author: "Daniel Thony D Elizabeth",
+        text: "Authentic and delicious Nasi Lemak!"
+    },
+    {
+        author: "Tiger Edgrr",
+        text: "First time trying Malaysian food — superb Nasi Lemak Ayam and sambal!"
+    },
+    {
+        author: "Macy Chan",
+        text: "First time trying Malaysian dish. Must try for spicy lovers!"
+    }
+];
+
+let currentReview = 0;
+const reviewText = document.getElementById("reviewText");
+const reviewAuthor = document.getElementById("reviewAuthor");
+const reviewsBox = document.getElementById("reviewsBox");
+
+function showReview(index) {
+    reviewsBox.classList.remove("show");
+
+    setTimeout(() => {
+        reviewText.textContent = reviews[index].text;
+        reviewAuthor.textContent = "— " + reviews[index].author;
+        reviewsBox.classList.add("show");
+    }, 500);
+}
+
+// Start slideshow
+showReview(currentReview);
+setInterval(() => {
+    currentReview = (currentReview + 1) % reviews.length;
+    showReview(currentReview);
+}, 5000); // change review every 5 seconds
