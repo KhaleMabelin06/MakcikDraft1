@@ -211,7 +211,7 @@ function finalizeOrder() {
         return;
     }
     
-    document.getElementById('confirmModal').style.display = 'block';
+    document.getElementById('confirmModal').style.display = 'flex';
     document.querySelector('.modal-content').classList.add('animate__animated', 'animate__zoomIn');
 }
 
