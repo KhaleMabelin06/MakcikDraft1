@@ -637,6 +637,155 @@ footer {
     border-top: 5px solid var(--primary-brown);
 }
 
+.reviews-box {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 1.5rem 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.reviews-box.show {
+    opacity: 1;
+}
+
+#reviewText {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+#reviewAuthor {
+    font-weight: bold;
+    color: #7A5C42;
+}
+
+/* --- Receipt Modal Styles --- */
+.receipt-modal-content {
+    max-width: 450px; /* Slightly narrower than the standard modal */
+    text-align: left;
+    border-top: 5px solid var(--primary-green);
+    padding: 0;
+    overflow: hidden;
+}
+
+.receipt-header {
+    text-align: center;
+    background-color: var(--bg-fog);
+    padding: 2rem 1rem;
+    border-bottom: 2px dashed #ccc;
+}
+
+.receipt-header .icon {
+    font-size: 4rem;
+    color: var(--primary-green);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.receipt-body {
+    padding: 1.5rem;
+}
+
+.receipt-details {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.receipt-items-list {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.receipt-item-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.receipt-totals {
+    background-color: var(--bg-fog);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.receipt-totals .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+}
+
+.receipt-totals .grand-total {
+    border-top: 1px solid #ccc;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    font-weight: bold;
+    color: var(--primary-green);
+    font-size: 1.1rem;
+}
+
+/* Button positioning */
+.receipt-modal-content .submit-btn {
+    width: 90%;
+    margin: 0 auto 1.5rem auto;
+    display: block;
+}
+
+/* Close X button */
+.close-modal-x {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-modal-x:hover {
+    color: var(--accent-red);
+}
+
+/* --- Receipt Modal Styles --- */
+.receipt-modal-content {
+    width: 90%;          /* Keeps it responsive on mobile */
+    max-width: 550px;    /* INCREASED from 450px to 550px */
+    text-align: left;
+    border-top: 5px solid var(--primary-green);
+    padding: 0;
+    overflow: hidden;
+    position: relative; /* Essential for the X button positioning */
+}
+
+/* --- Centering Fix for Receipt Modal --- */
+
+#successModal {
+    /* Use Flexbox to force content to the center */
+    align-items: center;
+    justify-content: center;
+    padding: 10px; /* Ensures it doesn't touch edges on small screens */
+}
+
+#successModal .modal-content {
+    /* Remove the old 15% top margin so it can float freely */
+    margin: 0;
+    
+    /* Ensure it doesn't get too tall for the screen */
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+
 @media (max-width: 640px) {
     .hero h2 {
         font-size: 1.8rem;
@@ -655,3 +804,4 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
